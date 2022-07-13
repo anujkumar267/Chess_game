@@ -150,7 +150,12 @@ function removeMovesPawnBlue() {
       col6Children[i].style.backgroundColor = "black";
     }
   }
-}function showMoveshorseBlue(event) {
+}
+Array.from(document.getElementsByClassName("horse2")).forEach((elem) => {
+  elem.addEventListener("mouseenter", showMoveshorseBlue);
+  elem.addEventListener("mouseout", removeMovesHorseBlue);
+});
+function showMoveshorseBlue(event) {
   let id = event.target.id;
   console.log(id);
   let rowNum = +id.split("-")[2];
